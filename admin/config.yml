@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: yourusername/noobee-cms
+  repo: noobee-toolkit/noobee-cms
   branch: main
 
 
@@ -35,4 +35,5 @@ collections:
       - { label: "Middle Text", name: "middleText", widget: "text", hint: "Main long-text section" }
       - { label: "Conclusion Text", name: "conclusionText", widget: "text", hint: "Final long-text section" }
       - { label: "Published", name: "published", widget: "boolean", default: true }
+
 
