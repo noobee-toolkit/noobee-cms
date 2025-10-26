@@ -5,20 +5,42 @@
     <title>Noobee CMS</title>
   </head>
   <body>
-    <!-- Load Decap CMS from CDN -->
+    <!-- Load Netlify Identity widget FIRST (handles invite/reset tokens) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- Load Decap CMS UI -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-    <!-- Wait until it's ready, then initialise -->
     <script>
+      // Init Identity early so it can process #invite_token / #recovery_token
+      netlifyIdentity.init();
+
+      // If you want to force-handle tokens manually as a fallback:
+      (function () {
+        const h = window.location.hash || "";
+        const INV = h.match(/invite_token=([^&]+)/);
+        const REC = h.match(/recovery_token=([^&]+)/);
+
+        if (INV && INV[1]) {
+          netlifyIdentity.acceptInvite(INV[1], null, true)
+            .catch(err => console.error("acceptInvite error:", err));
+        }
+
+        if (REC && REC[1]) {
+          netlifyIdentity.recover(REC[1], true)
+            .catch(err => console.error("recover error:", err));
+        }
+      })();
+
+      // Start CMS after DOM is ready and scripts are loaded
       window.addEventListener("DOMContentLoaded", function () {
         if (typeof CMS === "undefined") {
           console.error("Decap CMS failed to load.");
-        } else {
-   CMS.init({ configPath: "config.yml" });
-
+          return;
         }
+        // Point to your actual config file name
+        CMS.init({ configPath: "config.yml" });
       });
     </script>
   </body>
 </html>
-
