@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: jacquesmalecaut/noobee-cms
+  repo: noobee-toolkit/noobee-cms
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth
@@ -20,3 +20,4 @@ collections:
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
+
