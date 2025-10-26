@@ -3,12 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <title>Noobee CMS</title>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
- <script>
-  CMS.init({ configPath: "config.yaml" })
-</script>
+    <!-- Load Decap CMS from CDN -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- Wait until it's ready, then initialise -->
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        if (typeof CMS === "undefined") {
+          console.error("Decap CMS failed to load.");
+        } else {
+          CMS.init({ configPath: "config.yaml" });
+        }
+      });
+    </script>
   </body>
 </html>
-
