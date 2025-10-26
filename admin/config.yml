@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images/blog"
+public_folder: "/images/blog"
+
+collections:
+  - name: "noobeeBlog"
+    label: "Noobee Blog"
+    folder: "content/noobee/blog"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Jacques Malecaut" }
+      - { label: "Category", name: "category", widget: "string", required: false }
+      - { label: "Topic", name: "topic", widget: "string", required: false }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - { label: "Hero Image", name: "heroImage", widget: "image" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Neurotype", name: "neurotype", widget: "select", options: ["ADHD","Autistic","Dyslexic","Dyspraxic","All"], required: false }
+      - { label: "Audience", name: "audience", widget: "list", field: { label: "Audience Type", name: "aud", widget: "string" } }
+      - { label: "Intro Text", name: "introText", widget: "text", hint: "First long-text section" }
+      - { label: "Image Pair 1", name: "imagePair1", widget: "image", required: false, hint: "Left image of pair" }
+      - { label: "Image Pair 2", name: "imagePair2", widget: "image", required: false, hint: "Right image of pair" }
+      - { label: "Image Pair Position", name: "imagePairPosition", widget: "select", options: ["before","after"], default: "after", hint: "Show images before or after middle text" }
+      - { label: "Middle Text", name: "middleText", widget: "text", hint: "Main long-text section" }
+      - { label: "Conclusion Text", name: "conclusionText", widget: "text", hint: "Final long-text section" }
+      - { label: "Published", name: "published", widget: "boolean", default: true }

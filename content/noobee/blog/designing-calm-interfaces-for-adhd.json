@@ -1,0 +1,21 @@
+{
+  "title": "Designing Calm Interfaces for ADHD",
+  "slug": "designing-calm-interfaces-for-adhd",
+  "date": "2025-10-27",
+  "author": "Jacques Malecaut",
+  "category": "Design",
+  "topic": "Neurodiversity",
+  "thumbnail": "/images/blog/adhd-thumb.jpg",
+  "heroImage": "/images/blog/adhd-hero.jpg",
+  "summary": "Small design choices that help users with ADHD stay focused.",
+  "featured": true,
+  "neurotype": "ADHD",
+  "audience": ["Designers", "Developers", "Managers"],
+  "introText": "When attention shifts constantly, visual calm becomes a design language...",
+  "imagePair1": "/images/blog/adhd-focus.jpg",
+  "imagePair2": "/images/blog/adhd-chart.jpg",
+  "imagePairPosition": "after",
+  "middleText": "Start with clarity. Reduce movement and noise. Use predictable patterns...",
+  "conclusionText": "Accessibility isn’t about restriction — it’s about removing noise so users can find flow.",
+  "published": true
+}
