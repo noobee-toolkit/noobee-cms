@@ -1,9 +1,10 @@
 backend:
   name: github
-  repo: noobee-toolkit/noobee-cms
+  repo: jacquesmalecaut/noobee-cms
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
+  auth_type: implicit
+  app_id: Ov23liDLsKIPxSGX6opT
+
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
@@ -69,6 +70,7 @@ public_folder: "/uploads"
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Download Link", name: "download", widget: "string", required: false }
       - { label: "Thumbnail", name: "thumbnail", widget: "image", required: false }
+
 
 
 
