@@ -1,5 +1,1 @@
-[[redirects]]
-  from = "/.netlify/identity/*"
-  to = "/admin"
-  status = 200
-  force = true
+# This file is now empty because we switched to a simpler redirect system
