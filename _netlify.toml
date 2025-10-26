@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/.netlify/identity/*"
+  to = "/admin"
+  status = 200
+  force = true
