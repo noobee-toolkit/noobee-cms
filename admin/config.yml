@@ -7,7 +7,8 @@ backend:
   auth_endpoint: auth
   app_id: Ov23liDLsKIPxSGX6opT
 
-site_url: https://noobee-cms.pages.dev
+
+
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
@@ -22,5 +23,6 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Summary", name: "summary", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
+
 
 
