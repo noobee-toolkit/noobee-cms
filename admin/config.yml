@@ -3,7 +3,10 @@ backend:
   repo: noobee-toolkit/noobee-cms
   branch: main
   auth_type: implicit
-  app_id: Ov23liDLsKIPxSGX6opT  # paste from step 3
+  app_id: <your-client-id>
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
 
 media_folder: "static/uploads"
 public_folder: "/uploads"    # note: root, not /noobee-cms/uploads
@@ -72,6 +75,7 @@ collections:
           - { label: "Score", name: "score", widget: "number" }
           - { label: "Notes", name: "notes", widget: "text", required: false }
       - { label: "Last Reviewed", name: "last_reviewed", widget: "datetime" }
+
 
 
 
