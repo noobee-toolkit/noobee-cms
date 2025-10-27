@@ -5,6 +5,7 @@ backend:
   auth:
     type: token
     token: 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
+site_url: https://noobee-cms.pages.dev
 
 
 
@@ -78,6 +79,7 @@ collections:
           - { label: "Score", name: "score", widget: "number" }
           - { label: "Notes", name: "notes", widget: "text", required: false }
       - { label: "Last Reviewed", name: "last_reviewed", widget: "datetime" }
+
 
 
 
