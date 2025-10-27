@@ -4,8 +4,9 @@ backend:
   branch: main
   auth_type: implicit
   app_id: Ov23liDLsKIPxSGX6opT
-  base_url: https://noobee-oauth.<your-subdomain>.workers.dev
+  base_url: https://noobee-oauth.jacqueslavalmalecaut.workers.dev   # ← your actual URL
   auth_endpoint: auth
+
 
 
 
@@ -76,6 +77,7 @@ collections:
           - { label: "Score", name: "score", widget: "number" }
           - { label: "Notes", name: "notes", widget: "text", required: false }
       - { label: "Last Reviewed", name: "last_reviewed", widget: "datetime" }
+
 
 
 
