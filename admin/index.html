@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
+    <!-- Load the Decap CMS UI -->
     <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+
     <script>
+      // Wait until CMS loads, then init explicitly
       window.addEventListener("DOMContentLoaded", function () {
         if (typeof CMS === "undefined") {
-          console.error("Decap CMS failed to load.");
+          console.error("❌ Decap CMS failed to load.");
           return;
         }
+
+        console.log("✅ Decap CMS loaded, initialising...");
         CMS.init({ configPath: "config.yml" });
       });
     </script>
   </body>
 </html>
-
