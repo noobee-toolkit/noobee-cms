@@ -7,12 +7,11 @@ backend:
   auth_endpoint: auth
   app_id: Ov23liDLsKIPxSGX6opT
 
-
-
-media_folder: "static/uploads"
-public_folder: "/uploads"
+media_folder: "static/uploads"         # Stored in your repo
+public_folder: "/uploads"              # Served from this path on your site
 
 collections:
+  # BLOG
   - name: "blog"
     label: "Blog"
     folder: "content/blog"
@@ -20,9 +19,55 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Category", name: "category", widget: "select", options: ["Neuroinclusion","Recruitment","Workplace Design","Coaching","Tools","Opinion","Case Study"] }
+      - { label: "Audience", name: "audience", widget: "select", multiple: true, options: ["Individual","Organisation","Coach","Educator","Recruiter","Leader"] }
+      - { label: "Topic", name: "topic", widget: "select", options: ["ADHD","Autism","Dyslexia","Dyspraxia","Mental Health","Accessibility","Remote Work","Culture"] }
+      - { label: "Neurotype", name: "neurotype", widget: "select", multiple: true, options: ["ADHD","Autism","Dyslexia","Dyspraxia","Tourette’s","Other"] }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image", required: false }
+      - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+      - { label: "Body Image 1", name: "body_image_1", widget: "image", required: false }
+      - { label: "Body Image 2", name: "body_image_2", widget: "image", required: false }
+      - { label: "Intro", name: "intro", widget: "markdown" }
+      - { label: "Middle", name: "middle", widget: "markdown" }
+      - { label: "Outro", name: "outro", widget: "markdown" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
+  # RESOURCES
+  - name: "resources"
+    label: "Resources"
+    folder: "content/resources"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Type", name: "type", widget: "select", options: ["Guide","Tool","Download","Course"] }
+      - { label: "Audience", name: "audience", widget: "select", multiple: true, options: ["Individual","Organisation","Educator","Parent"] }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Download Link", name: "download", widget: "string", required: false }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image", required: false }
 
-
-
+  # ACCESSIBILITY REVIEWS
+  - name: "reviews"
+    label: "Accessibility Reviews"
+    folder: "content/reviews"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Organisation", name: "organisation", widget: "string" }
+      - { label: "Website", name: "url", widget: "string" }
+      - { label: "Overall Score", name: "overall", widget: "number" }
+      - { label: "Automated Score", name: "automated", widget: "number" }
+      - { label: "Community Score", name: "community", widget: "number" }
+      - { label: "Expert Score", name: "expert", widget: "number" }
+      - { label: "Highlights", name: "highlights", widget: "text" }
+      - label: "Subscores"
+        name: "subscores"
+        widget: "list"
+        fields:
+          - { label: "Category", name: "category", widget: "string" }
+          - { label: "Score", name: "score", widget: "number" }
+          - { label: "Notes", name: "notes", widget: "text", required: false }
+      - { label: "Last Reviewed", name: "last_reviewed", widget: "datetime" }
