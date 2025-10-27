@@ -72,3 +72,4 @@ collections:
           - { label: "Score", name: "score", widget: "number" }
           - { label: "Notes", name: "notes", widget: "text", required: false }
       - { label: "Last Reviewed", name: "last_reviewed", widget: "datetime" }
+
