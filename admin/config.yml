@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: <YOUR_GITHUB_USERNAME>/noobee-cms
+  repo: noobee-toolkit/noobee-cms
   branch: main
   auth_type: implicit
   app_id: Ov23liDLsKIPxSGX6opT  # paste from step 3
@@ -72,5 +72,6 @@ collections:
           - { label: "Score", name: "score", widget: "number" }
           - { label: "Notes", name: "notes", widget: "text", required: false }
       - { label: "Last Reviewed", name: "last_reviewed", widget: "datetime" }
+
 
 
